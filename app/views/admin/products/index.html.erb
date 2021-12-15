@@ -1,0 +1,9 @@
+<% provide :title, t("page_index_product_admin.title") %>
+<h1 class="subject">
+  <%= t "page_index_product_admin.subject" %>
+</h1>
+<%= paginate @products %>
+<div class="container_index">
+  <%= render "product" %>
+</div>
+<%= paginate @products %>

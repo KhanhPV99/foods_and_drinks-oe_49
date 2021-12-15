@@ -1,0 +1,66 @@
+<% provide :title, @product.name %>
+<h1 class="title-show">
+  <%= t "page_show_product_admin.title" %>
+</h1>
+<table class="table table-bordered">
+  <thead>
+    <tr class="tr-head-show">
+      <th class="th-head-show" >
+        <%= t "page_show_product_admin.table.img" %>
+      </th>
+      <th class="th-head-show" >
+        <%= t "page_show_product_admin.table.name" %>
+      </th>
+      <th class="th-head-show">
+        <%= t "page_show_product_admin.table.price" %>
+      </th>
+      <th class="th-head-show-width40" >
+        <%= t "page_show_product_admin.table.description" %>
+      </th>
+      <th class="th-head-show" >
+        <%= t "page_show_product_admin.table.quantity" %>
+      </th>
+      <th class="th-head-show">
+        <%= t "page_show_product_admin.table.status" %>
+      </th>
+      <th class="th-head-show">
+        <%= t "page_show_product_admin.table.category" %>
+      </th>
+      <th colspan="2" class="th-action"><%= t "page_show_product_admin.table.action" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="tr-body-show">
+      <td class="td-body-show">
+        <% if check_image? %>
+          <%= image_tag @product.display_thumbnail %>
+        <% else %>
+          <%= gravatar_for @product, size: Settings.size_80 %>
+        <% end %>
+      </td>
+      <td class="td-name-body-show"><%= @product.name %></td>
+      <td class="td-body-show"><%= @product.price %></td>
+      <td class="td-body-show"><%= @product.description %></td>
+      <td class="td-body-show"><%= @product.quantity %></td>
+      <td class="td-body-show"><%= @product.status %></td>
+      <td class="td-body-show"><%= @product.category_name %></td>
+      <td>
+        <%= link_to t("page_show_product_admin.edit"), edit_admin_product_path(@product),
+          class: "btn btn-success td-action-body-show" %>
+      </td>
+      <td>
+        <%= button_to t("page_show_product_admin.delete"), admin_product_path(@product),
+          method: :delete, data: {confirm: t("confirm")},
+          class: "btn btn-danger td-action-body-show" %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h4><%= t "page_show_product_admin.images" %></h4>
+<div class="container-images-show">
+  <% (0...@product.images.count).each do |img| %>
+    <div class="image-show">
+      <%= image_tag (@product.display_image(img)) if @product.images.attached? %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,35 @@
+<tr>
+  <td><%= l order.created_at, format: :own %></td>
+  <td><%= order.user_name %></td>
+  <td><%= order.phone %></td>
+  <td><%= order.address %></td>
+  <td>
+    <%= number_to_currency(order.total_price, locale: :vi) %>
+  </td>
+  <td>
+    <h5>
+      <span class="badge btn <%= t "class.#{order.status}" %>">
+        <%= t "status_order.#{order.status}" %>
+      </span>
+    </h5>
+  </td>
+  <td>
+    <%= link_to admin_order_path(order) do %>
+      <button type="button" class="btn btn-primary btn-sm">
+        <i class="fa fa-eye" aria-hidden="true"></i>
+      </button>
+    <% end %>
+    <% if order.open? %>
+      <%= link_to approve_admin_order_path(order), method: :put, data: { confirm: t("you_sure") } do %>
+        <button type="button" class="btn btn-info btn-sm">
+          <i class="fa fa-check" aria-hidden="true"></i>
+        </button>
+      <% end %>
+      <%= link_to reject_admin_order_path(order), method: :put, data: { confirm: t("you_sure") } do %>
+        <button type="button" class="btn btn-danger btn-sm">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </button>
+      <% end %>
+    <% end %>
+  </td>
+</tr>

@@ -1,0 +1,119 @@
+@import 'color';
+
+/* resize icons language */
+.icon-inline {
+  list-style-type: none;
+}
+
+.icons-lang {
+  width: 35px;
+  float: right;
+}
+
+.avatar-default {
+  width: 35px;
+  border-radius: 50%;
+}
+
+.nav-icon {
+  padding: 18px 20px;
+}
+
+input[type=text],
+input[type=email],
+input[type=password] {
+  height: 20px;
+  width: 290px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 13px;
+  background-color: $white;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 13px 10px 13px 20px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+.p-description {
+  font-size: 13px;
+}
+
+#bg-color {
+  background-color: rgba(0,0,0,0.6);
+}
+
+.image-order {
+  height: 100px;
+}
+
+.img-prod img {
+  height: 100%;
+  width: 250px;
+}
+
+.table tbody tr .td-orders{
+  padding: 0 10px;
+}
+
+#order_note {
+  height: 120px !important;
+  padding-top: 5px;
+}
+
+.form-lable {
+  color: $white;
+}
+
+#orders-form input[type=text] {
+  width: 90%;
+}
+
+.div-left {
+  padding-left: 10px;
+  float: left;
+}
+
+.field-add {
+  height: 8em;
+}
+
+.address-form, .button-center {
+  margin: 0 auto;
+}
+
+.title-order {
+  margin-bottom: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.notice-alert {
+  margin: 0 12em;
+  border: 1px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.alert {
+  color: $red;
+  padding: 4px 12px;
+}
+
+.notice {
+  color: $green;
+  padding: 4px 12px;
+}
+
+#form-container {
+  position: relative;
+  margin: 3% auto;
+  padding: 3em;
+  width: 50em;
+  height: auto;
+  background: #FFF;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}

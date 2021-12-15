@@ -1,0 +1,39 @@
+length:
+  digit_negative_1: -1
+  min_5: 5
+  min_8: 8
+  max_100: 100
+  max_250: 250
+show:
+  show_5: 5
+  show_10: 10
+  digit_1: 1
+  digit_8: 8
+open: 0
+confirmed: 1
+shipping: 2
+completed: 3
+cancelled: 4
+disclaim: 5
+disabled: 0
+enabled: 1
+gravatar:
+  size_50: 50
+  size_80: 80
+  size_198: 198
+  size_100: 100
+  size_250: 250
+per_page_15: 15
+per_page_16: 16
+image:
+  size_1mb: 5
+  format: ["image/png", "image/jpg", "image/jpeg"]
+resize_images: "300x300!"
+resize_thumbnail: "80x80!"
+resize_thumbnail_index: "250x250!"
+row_1: 1
+row_2: 2
+out_of_stock: 0
+show_10: 10
+show_5: 5
+init_number: 0

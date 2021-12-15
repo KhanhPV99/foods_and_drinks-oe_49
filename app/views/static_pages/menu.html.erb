@@ -1,0 +1,36 @@
+<div class="hero-wrap hero-bread" style="background-image: url(/assets/images/bg_1.jpg);">
+  <div class="container">
+    <div class="row no-gutters slider-text align-items-center justify-content-center">
+      <div class="col-md-9 ftco-animate text-center" id="bg-color">
+        <h1 class="mb-0 bread">
+          <span class="mr-2"><%= link_to t("home"), root_path %></span>/
+          <span><%= t("product.products") %></span>
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-10 mb-5 text-center">
+        <ul class="product-category">
+          <li><a href="#" class="active">All</a></li>
+          <% @categories.each do |category| %>
+            <li><%= link_to category.name, filter_path(category_id: category.id) %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
+    <div class="row">
+      <%= render @products %>
+    </div>
+    <div class="pagination justify-content-center">
+      <%= paginate @products %>
+    </div>
+  </div>
+</section>
